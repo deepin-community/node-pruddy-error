@@ -1,0 +1,29 @@
+Source: node-pruddy-error
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders:
+ Harley Swick <fancycade@protonmail.com>,
+Testsuite: autopkgtest-pkg-nodejs
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-nodejs,
+ mocha <!nocheck>,
+ node-assume <!nocheck>,
+Standards-Version: 4.6.0
+Homepage: https://github.com/bigpipe/pruddy-error#readme
+Vcs-Git: https://salsa.debian.org/js-team/node-pruddy-error.git
+Vcs-Browser: https://salsa.debian.org/js-team/node-pruddy-error
+Rules-Requires-Root: no
+
+Package: node-pruddy-error
+Architecture: all
+Depends:
+ node-is-node (>= 1.0.2),
+ ${misc:Depends},
+Description: Prettify given error object
+ This is a clone of the prettify-error module which was unpublished
+ by the author. This package is meant to prettify error objects for
+ console outputs. Which makes it very helpful for debugging and testing.
+ .
+ This package is useful as dependency for other node packages in Debian.

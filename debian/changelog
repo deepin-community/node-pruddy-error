@@ -1,0 +1,45 @@
+node-pruddy-error (2.0.2-4) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Submit
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright)
+
+  [ Yadd ]
+  * Update standards version to 4.6.0, no changes needed.
+  * debian/watch:
+    * Fix GitHub tags regex
+    * Fix filenamemangle
+    * /tags instead of /releases
+  * Drop dependency to nodejs
+
+ -- Yadd <yadd@debian.org>  Tue, 09 Nov 2021 17:42:39 +0100
+
+node-pruddy-error (2.0.2-3) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Xavier Guimard ]
+  * Use dh-sequence-nodejs
+
+  [ Andrius Merkys ]
+  * Enabling autopkgtest (Closes: #972414).
+  * Adding a patch to get around test failure due to different build paths.
+
+ -- Andrius Merkys <merkys@debian.org>  Sat, 07 Nov 2020 02:10:22 -0500
+
+node-pruddy-error (2.0.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Bumping debhelper-compat (no changes).
+  * Adding standard headers for remove-leftpad.diff.
+
+ -- Andrius Merkys <merkys@debian.org>  Mon, 19 Oct 2020 00:22:01 -0400
+
+node-pruddy-error (2.0.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #962639)
+
+ -- Harley Swick <fancycade@protonmail.com>  Tue, 26 May 2020 21:46:43 -0500

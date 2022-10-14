@@ -1,0 +1,41 @@
+Description: Remove leftpad as a dependency
+Author: Harley Swick <fancycade@protonmail.com>
+--- a/package.json
++++ b/package.json
+@@ -17,8 +17,7 @@
+   },
+   "license": "BSD",
+   "dependencies": {
+-    "is-node": "^1.0.2",
+-    "left-pad": "^1.2.0"
++    "is-node": "^1.0.2"
+   },
+   "devDependencies": {
+     "assume": "^1.5.2",
+--- a/index.js
++++ b/index.js
+@@ -1,7 +1,6 @@
+ var failingCode = require('./failing-code');
+ var style = require('./style-format');
+ var format = require('./format-text');
+-var leftpad = require('left-pad');
+ 
+ /**
+  * The template that is rendered with the error detailed error information.
+@@ -75,13 +74,13 @@
+     title: error.message,
+     filename: code[1].filename,
+     previousLine: code[0].code,
+-    previousLineNo: leftpad(previous, line),
++    previousLineNo: previous.padStart(line),
+     previousColNo: code[0].col,
+     failingLine: code[1].code,
+-    failingLineNo: leftpad(failing, line),
++    failingLineNo: failing.padStart(line),
+     failingColNo: code[1].col,
+     nextLine: code[2].code,
+-    nextLineNo: leftpad(next, line),
++    nextLineNo: next.padStart(line),
+     nextColNo: code[2].col,
+     stack: tabStack(error.stack),
+     '^': showColumn(code, line - failing.length, '^'),

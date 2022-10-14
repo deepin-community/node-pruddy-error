@@ -1,0 +1,16 @@
+Description: Due to build directory being renamed to 'pruddy-error-<version>'
+ in Debian, the test case has to be adjusted to not consider the project's
+ directory name.
+Author: Andrius Merkys <merkys@debian.org>
+Forwarded: not-needed
+--- a/test.js
++++ b/test.js
+@@ -45,7 +45,7 @@
+       pruddy(fixture, {
+         read: function read(data) {
+           assume(data).is.a('object');
+-          assume(data.filename).contains('pruddy-error/test.js');
++          assume(data.filename).contains('test.js');
+           assume(data.line).equals(5);
+           assume(data.col).equals(19);
+ 
